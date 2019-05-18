@@ -1,40 +1,26 @@
-package br.com.maverick.api.user.model;
+package br.com.maverick.api.user.dto;
 
-import br.com.maverick.api.user.id.UserId;
-import lombok.Data;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
-import javax.persistence.*;
-import java.util.Date;
+public class UserDto {
 
-@Data
-@Entity
-@Table(name = "tco_user")
-public class User {
-    @EmbeddedId
-    private UserId Id;
-
+    @NotEmpty
     private String name;
 
+    @Email
+    @NotEmpty
     private String email;
 
+    @NotEmpty
     private String cpf;
 
     private String telephone;
 
+    @NotEmpty
     private String password;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateAdded;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateModified;
-
-    public UserId getId() {
-        return Id;
-    }
-
-    public void setId(UserId id) {
-        Id = id;
+    public UserDto() {
     }
 
     public String getName() {
@@ -75,21 +61,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Date getDateAdded() {
-        return dateAdded;
-    }
-
-    public void setDateAdded(Date dateAdded) {
-        this.dateAdded = dateAdded;
-    }
-
-    public Date getDateModified() {
-        return dateModified;
-    }
-
-    public void setDateModified(Date dateModified) {
-        this.dateModified = dateModified;
     }
 }

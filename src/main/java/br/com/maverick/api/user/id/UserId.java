@@ -1,4 +1,4 @@
-package br.com.maverick.api.user.UserId;
+package br.com.maverick.api.user.id;
 
 import lombok.Data;
 
@@ -11,6 +11,14 @@ public class UserId implements Serializable {
 
     private Integer userId;
     private Integer companyId;
+
+    public UserId() {
+    }
+
+    public UserId(Integer userId, Integer companyId) {
+        this.userId = userId;
+        this.companyId = companyId;
+    }
 
     public Integer getUserId() {
         return userId;
