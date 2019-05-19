@@ -15,7 +15,7 @@ spring:
         globally_quoted_identifiers_skip_column_definitions: true
 
 # Show or not log for each sql query
-    show-sql: false
+    show-sql: true
 
 # Hibernate ddl auto (create, create-drop, validate, update)S
     hibernate:
